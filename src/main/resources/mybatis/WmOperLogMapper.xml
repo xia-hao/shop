@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shop.mapper.WmOperLogMapper">
+  <resultMap id="BaseResultMap" type="com.shop.domain.WmOperLog">
+    <result column="uid" jdbcType="INTEGER" property="uid" />
+    <result column="motion" jdbcType="VARCHAR" property="motion" />
+    <result column="creationTime" jdbcType="TIMESTAMP" property="creationtime" />
+  </resultMap>
+  <insert id="insert" parameterType="com.shop.domain.WmOperLog">
+    insert into wm_oper_log (uid, motion, creationTime
+      )
+    values (#{uid,jdbcType=INTEGER}, #{motion,jdbcType=VARCHAR}, #{creationtime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.shop.domain.WmOperLog">
+    insert into wm_oper_log
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        uid,
+      </if>
+      <if test="motion != null">
+        motion,
+      </if>
+      <if test="creationtime != null">
+        creationTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        #{uid,jdbcType=INTEGER},
+      </if>
+      <if test="motion != null">
+        #{motion,jdbcType=VARCHAR},
+      </if>
+      <if test="creationtime != null">
+        #{creationtime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+</mapper>
