@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/../../../WebStorm/y_project-RuoYi-Vue-master/RuoYi-Vue/ruoyi-ui/src/views/redirect.vue" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/pages/index.vue" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/pages/login.vue" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/pages/register.vue" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/utils/request.js" charset="GBK" />
+  </component>
+</project>
