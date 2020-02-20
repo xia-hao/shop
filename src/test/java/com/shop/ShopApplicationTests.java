@@ -29,7 +29,7 @@ class ShopApplicationTests {
         Product product = new Product();
         product.setPageNum(1);
         product.setPageSize(5);
-        product.setProName("可乐");
+        product.setProName("电");
         List<Product> list = productService.selectByName(product);
        for (Product pro : list){
            System.out.println(pro.getId()+"======"+pro.getProName());
