@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.List;
@@ -92,7 +93,6 @@ public class UserServiceImpl implements UserService {
             map.put("resCode","902");
             map.put("info","账号或密码错误！");
         }finally {
-            map.put("data","/index");
             return map;
         }
     }

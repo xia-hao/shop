@@ -11,6 +11,8 @@ public class User implements Serializable {
 
     private Long balance;
 
+    private String code;
+
     public Integer getId() {
         return id;
     }
@@ -41,5 +43,13 @@ public class User implements Serializable {
 
     public void setBalance(Long balance) {
         this.balance = balance;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
     }
 }

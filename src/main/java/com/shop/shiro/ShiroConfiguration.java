@@ -32,6 +32,7 @@ public class ShiroConfiguration {
         filterChainDefinitionMap.put("/product/**", "anon");
         filterChainDefinitionMap.put("/bill/**", "authc");
         filterChainDefinitionMap.put("/pay/**", "authc");
+        filterChainDefinitionMap.put("/img", "anon");
         filterChainDefinitionMap.put("/register", "anon");
         bean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         return bean;
