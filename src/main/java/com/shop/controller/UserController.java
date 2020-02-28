@@ -45,20 +45,22 @@ public class UserController {
 
     @PostMapping("/signIn")
     public Map signIn(@RequestBody User user, HttpSession session) {
-        Map<String, Object> map = userService.signIn(user);
-        if(!map.get("resCode").equals("902")&&!user.getCode().equals(session.getAttribute("rightCode"))){
-            map.put("resCode","905");
-            map.put("info","验证码错误！");
-        }
-        if(map.get("resCode").equals("1000")){
-            session.setAttribute("user", map.get("user"));
-            map.put("data","/index");
+        Map<String, Object> map = new HashMap<>();
+        if (!user.getCode().equals(session.getAttribute("rightCode"))) {
+            map.put("resCode", "905");
+            map.put("info", "验证码错误！");
+        } else {
+            map = userService.signIn(user);
+            if (map.get("resCode").equals("1000")) {
+                session.setAttribute("user", map.get("user"));
+                map.put("data", "/index");
+            }
         }
         return map;
     }
 
     @RequestMapping("/img")
-    public void img(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse){
+    public void img(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) {
 
         byte[] captchaChallengeAsJpeg = null;
         ByteArrayOutputStream jpegOutputStream = new ByteArrayOutputStream();
